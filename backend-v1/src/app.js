@@ -105,12 +105,12 @@ app.use('/api/v1', v1Routes); // prefix the version of api
 
 // 404 Middleware
 // 404 handler
-app.use('*', (req, res) => {
-    res.status(404).json({
-      success: false,
-      message: `Route not found: ${req.originalUrl}`,
-    });
+app.use((req, res, next) => {
+  res.status(404).json({
+    success: false,
+    message: `Route not found: ${req.originalUrl}`,
   });
+});
 
 // Error handling middleware
 app.use(errorMiddleware);

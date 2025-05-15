@@ -4,7 +4,7 @@ import chalk from 'chalk';
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       // Options are now set by default in Mongoose 8.x
     });
 
